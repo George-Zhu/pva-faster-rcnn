@@ -3,6 +3,7 @@
 # Copyright (c) 2015 Microsoft
 # Licensed under The MIT License [see LICENSE for details]
 # Written by Ross Girshick
+# Updated by Ning Ding
 # --------------------------------------------------------
 
 """Factory method for easily getting imdbs by name."""
@@ -11,6 +12,7 @@ __sets = {}
 
 from datasets.pascal_voc import pascal_voc
 from datasets.coco import coco
+from datasets.own_data import own_data
 import numpy as np
 
 # Set up voc_<year>_<split> using selective search "fast" mode
@@ -31,7 +33,7 @@ for year in ['2015']:
         name = 'coco_{}_{}'.format(year, split)
         __sets[name] = (lambda split=split, year=year: coco(split, year))
 
-for ImageSet in ['jiatu_9c']:
+for ImageSet in ['cloth','sub28','jiatu_9c']:
     name = ImageSet
     __sets[name] = (lambda name=name: own_data(name))
         
