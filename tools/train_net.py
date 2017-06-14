@@ -30,7 +30,7 @@ def parse_args():
                         default=0, type=int)
     parser.add_argument('--solver', dest='solver',
                         help='solver prototxt',
-                        default=models/pvanet/example_train/solver.prototxt, type=str)
+                        default="models/pvanet/example_train/solver.prototxt", type=str)
     parser.add_argument('--iters', dest='max_iters',
                         help='number of iterations to train',
                         default=400000, type=int)
@@ -39,7 +39,7 @@ def parse_args():
                         default="models/pvanet/pretrained/pva9.1_pretrained_no_fc6.caffemodel", type=str)
     parser.add_argument('--cfg', dest='cfg_file',
                         help='optional config file',
-                        default=models/pvanet/cfgs/train.yml, type=str)
+                        default="models/pvanet/cfgs/train.yml", type=str)
     parser.add_argument('--imdb', dest='imdb_name',
                         help='dataset to train on',
                         required=True, type=str)
