@@ -31,6 +31,10 @@ for year in ['2015']:
         name = 'coco_{}_{}'.format(year, split)
         __sets[name] = (lambda split=split, year=year: coco(split, year))
 
+for ImageSet in ['jiatu_9c']:
+    name = ImageSet
+    __sets[name] = (lambda name=name: own_data(name))
+        
 def get_imdb(name):
     """Get an imdb (image database) by name."""
     if not __sets.has_key(name):
